@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji HEX Progress Bar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #212121;
+            color: white;
+        }
+
+        .emojiHexBox {
+            width: 100%;
+            height: 70%;
+            border-bottom: 1px solid white;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            align-items: center;
+
+        }
+
+        #emojiBox {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+            filter: drop-shadow(0px 0px 50px white);
+            /* animation: blink 1s linear infinite; */
+            animation: fade 1s infinite;
+        }
+
+        @keyframes fade {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.2;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        } */
+
+        #hexBox {
+            width: 50%;
+            height: 30%;
+            border: 1px solid white;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-top: 25px;
+        }
+
+        .showHex {
+            padding: 3px 5px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .bgchange {
+            padding: 3px 5px;
+        }
+
+        .box2 {
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+        }
+
+        #probarBox {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        #probarBox div {
+            margin: 0px 10px 0px 10px;
+            width: 70%;
+            height: 15px;
+            /* border: 1px solid white; */
+            background-color: #fff;
+            margin-top: 3px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        #bar {
+            width: 0%;
+            height: 15px;
+            border-radius: inherit;
+            background-color: red;
+            transition: all 1.2s ease-out;
+
+        }
+
+
+        #click {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="emojiHexBox">
+        <span id="emojiBox"></span>
+        <span id="hexBox">
+            <button class="showHex">#212121</button>
+            <button class="bgchange">Change Background</button>
+        </span>
+    </div>
+    <div class="box2">
+        <div id="probarBox">
+            <p id="no">0%</p>
+            <div>
+                <p id="bar"></p>
+            </div>
+            <p>100%</p>
+        </div>
+        <div id="click">
+            <button>Click</button>
+        </div>
+    </div>
+</body>
+<script>
+    let emoji = document.getElementById("emojiBox");
+    const smileys = ["😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "😊", "😇", "😀", "🎉", "🚀", "🌟", "🍕", "🐶", "🎵", "🏖️", "⚡", "❤️"];
+    setInterval(() => {
+        let i = Math.floor(Math.random() * 20);
+        let smiley = smileys[i];
+        emoji.innerHTML = smiley;
+    }, 1000)
+
+    let hexcode = document.querySelector(".showHex");
+    let bgbtn = document.querySelector(".bgchange");
+    let body = document.querySelector("body");
+    bgbtn.addEventListener("click", () => {
+        let hex = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        console.log(hex);
+        hexcode.innerHTML = hex;
+        body.style.backgroundColor = hex;
+    })
+
+    let btnclick = document.getElementById("click");
+    let bar = document.getElementById("bar")
+    let id = document.getElementById("no")
+    btnclick.addEventListener("click", () => {
+        let count = 0;
+        console.log("clicked")
+        let interval = setInterval(() => {
+            if (count <= 100) {
+                bar.style.width = `${count}%`;
+                no.innerHTML = count + "%"
+                count += 1;
+            }
+            else {
+                clearInterval(interval)
+            }
+        }, 100)
+
+    })
+
+</script>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        body{
+            height: 100vh;
+            background-color: #212121;
+            color:#fff;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            border:3px solid white;
+            border-radius: 15px;
+            padding:5px 30px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 20vw;
+        }
+        #no{
+            display: inline;
+        }
+        button{
+            height: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="Sub">-</button>
+        <h3 id="no"></h3>
+        <button id="Add">+</button>
+    </div>
+</body>
+<script>
+    const btnAdd = document.getElementById("Add");
+    const btnSub = document.getElementById("Sub");
+    const no = document.getElementById("no");
+    let count=0;
+    no.innerText = count;
+    btnAdd.addEventListener("click",() => {
+        count++;
+        no.innerText = count;
+    })
+    btnSub.addEventListener("click",() => {
+        if(count>0){
+            count--;
+            no.innerText = count;
+        }
+    })
+</script>
+</html>

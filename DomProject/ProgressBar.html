@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar Loader</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #212121;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            /* color: #333; */
+            color: black;
+            text-shadow: 0px 0px 50px white;
+        }
+
+        .progress-container {
+            width: 80%;
+            max-width: 500px;
+            background: #ddd;
+            border-radius: 25px;
+            overflow: hidden;
+            height: 30px;
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            /* background: linear-gradient(90deg, #00c6ff, #0072ff); */
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 25px;
+            transition: width 0.1s ease;
+        }
+
+        button {
+            padding: 5px 10px;
+            background: #0072ff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0057cc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Progress Bar Loader</h2>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar">0%</div>
+    </div>
+
+    <div class="btns">
+        <button id="start-btn">Start Loading</button>
+        <button id="reset-btn">Reset</button>
+    </div>
+    <audio id="audio" src="../img/thud-sound-effect-405470.mp3"></audio>
+
+    <script>
+        const progressBar = document.getElementById("progress-bar");
+        const startBtn = document.getElementById("start-btn");
+        const audio = document.getElementById("audio")
+
+        startBtn.addEventListener("click", () => {
+            let progress = 0;
+            progressBar.style.width = "0%";
+            progressBar.textContent = "0%";
+
+            // clear any old intervals if button clicked again
+            clearInterval(window.loadingInterval);
+
+            setTimeout(() => {  //for delay 1s 
+            window.loadingInterval = setInterval(() => { //window.loadingInterval makes the variable global, so you can access and clear it anywhere in your script
+                progress += 1;
+                progressBar.style.width = progress + "%";
+                progressBar.textContent = progress + "%";
+
+                if (progress < 40) {
+                    progressBar.style.backgroundColor = "red";
+                } else if (progress < 70) {
+                    progressBar.style.backgroundColor = "orange";
+                } else {
+                    progressBar.style.backgroundColor = "green";
+                }
+
+                if (progress >= 100) {
+                    clearInterval(window.loadingInterval);
+                    audio.play()
+                    progressBar.textContent = "Completed!";
+                }
+            }, 50); // speed of loading
+        },1000);
+        });
+
+        let resetBtn = document.getElementById("reset-btn")
+        resetBtn.addEventListener("click", () => {
+            console.log(progressBar.textContent);
+            if (progressBar.textContent == "Completed!") {
+                let progress = 100;
+                let loading = setInterval(() => {
+                    progress -= 1;
+                    progressBar.style.width = progress + "%"
+                    progressBar.textContent = progress + "%"
+
+                    if (progress > 80) {
+                        progressBar.style.backgroundColor = "green";
+                    } else if (progress > 50) {
+                        progressBar.style.backgroundColor = "orange";
+                    } else {
+                        progressBar.style.backgroundColor = "red";
+                    }
+
+                    if (progress <= 0) {
+                        console.log("loading end")
+                        clearInterval(loading)
+                    }
+                }, 50);
+
+            }
+        }, false)
+    </script>
+
+</body>
+
+</html>

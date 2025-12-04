@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black; color:white">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+    </div>
+</body>
+<script>
+    //parent -> child
+    const parentAll=document.querySelectorAll(".parent");
+    // console.log(parentAll);//NodeList [div.parent]
+    // console.log(parentAll[0]); //<div class="parent">…</div>
+    // console.log(parentAll[0].children); //HTMLCollection(5)
+    // console.log(parentAll[0].children[0]) //<div class="day">Monday</div>
+
+    const firstParent=document.querySelector(".parent")
+    // console.log(firstParent) ////<div class="parent">…</div>
+    // console.log(firstParent.children) //HTMLCollection(5)
+    // for(let i=0;i<firstParent.children.length;i++){
+    //     console.log(firstParent.children[i].innerHTML)
+    // }
+    // console.log(firstParent.children[0]); //<div class="day">Monday</div>
+    // console.log(firstParent.children[0].innerHTML); //Monday
+    // firstParent.children[1].style.color="orange";
+    // firstParent.firstChild
+    // firstParent.firstElementChild
+    // firstParent.lastElementChild
+
+    //child -> parent
+    // const dayOne = document.querySelector(".day")
+    // console.log(dayOne) //<div class="day">Monday</div>
+    // console.log(dayOne.innerHTML) //Monday
+    // console.log(dayOne.parentElement); //<div class="parent">…</div>
+    // console.log(dayOne.nextElementSibling); //<div class="day">Tuesday</div>
+
+    console.log("Nodes :=",firstParent.childNodes)
+</script> 
+</html>

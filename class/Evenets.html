@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>FormData Example</h3>
+
+  <form id="myForm">
+    <input type="text" name="username" value="Piyush"><br>
+    <input type="email" name="email" value="piyush@gmail.com"><br>
+    <input type="number" name="age" value="21"><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('myForm');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Stop form reload
+
+      // 🧱 Create FormData object
+      const data = new FormData(form);
+    
+      console.log(data);
+      // ✅ 1️⃣ entries() → all key-value pairs
+      console.log("Entries:");
+      for (let [key, value] of data.entries()) {
+        console.log(key, ":", value);
+      }
+
+      // ✅ 2️⃣ keys() → all field names
+      console.log("Keys:");
+      for (let key of data.keys()) {
+        console.log(key);
+      }
+
+      // ✅ 3️⃣ values() → all field values
+      console.log("Values:");
+      for (let value of data.values()) {
+        console.log(value);
+      }
+
+      // ✅ 4️⃣ append() → add new field
+      data.append("country", "India");
+      console.log("After append country:", data.get("country"));
+
+      // ✅ 5️⃣ get() → get value of a field
+      console.log("Email is:", data.get("email"));
+
+      // ✅ 6️⃣ delete() → remove a field
+      data.delete("age");
+      console.log("After delete age:");
+      for (let [key, value] of data.entries()) {
+        console.log(key, ":", value);
+      } 
+    });
+  </script>
+</body>
+</html>

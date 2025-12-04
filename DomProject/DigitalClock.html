@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Mode Toggle</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    body {
+        background-color: #212121;
+        color: #fff;
+    }
+
+    .container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .digital-box {
+        background-color: #fff;
+        color: #212121;
+        padding: 5px 10px;
+        border: 1px solid #fff;
+        border-radius: 3px;
+        box-shadow: 0px 0px 5px white;
+    }
+    #mode{
+        margin:20px;
+        padding:5px;
+        border:none;
+        border-radius: 3px;
+        box-shadow: 0px 0px 5px white;
+        cursor: pointer;
+        background-color: #fff;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="digital-box">
+            <span id="hrs">01</span> :
+            <span id="min">04</span> :
+            <span id="sec">34</span> 
+            <span id="ampm">AM</span>
+        </div>
+            
+        <button id="mode">Light</button>
+        
+    </div>
+</body>
+<script>
+    let hrs = document.getElementById("hrs");
+    let min = document.getElementById("min");
+    let sec = document.getElementById("sec");
+    let ampm = document.getElementById("ampm");
+
+    function setTime(){
+        let date = new Date();
+        hours = date.getHours();
+        minutes = date.getMinutes();
+        seconds = date.getSeconds();
+        // (hourse >= 12)?AM_PM.innerText = "PM":AM_PM.innerText = "AM";
+        ampm.innerText = hours >= 12 ? 'PM' : 'AM';
+        if(hours > 12 ){hours = hours - 12}
+        if(hours < 10 ) { hours = "0" + hours}
+        if(minutes < 10 ) { minutes = "0" + minutes}
+        if(seconds < 10 ) { seconds = "0" + seconds}
+        hrs.innerText =  hours;
+        min.innerText =  minutes;
+        sec.innerText =  seconds;
+        
+    }
+
+    setInterval(setTime,100)
+
+    //********************************
+    let mode = document.getElementById("mode");
+    let body = document.querySelector("body")
+    let digital_box = document.querySelector(".digital-box");
+    let flag = true;
+    mode.addEventListener("click", () => {
+        if(flag == true){
+            mode.innerText = "Dark"
+            mode.style.cssText = "box-shadow: 0px 0px 5px #212121;background-color: #212121; color:#fff";
+            body.style.backgroundColor = "#fff";
+            digital_box.style.cssText= "background-color: #212121; color: #fff;border:none;box-shadow: 0px 0px 5px #212121;"
+        }
+        else{
+            mode.innerText = "Light"
+            mode.style.cssText = "box-shadow: 0px 0px 5px #fff;background-color: #fff; color:#212121";
+            body.style.backgroundColor = "#212121";
+            digital_box.style.cssText= "background-color: #fff; color: #212121;padding: 5px 10px;border: 1px solid #fff;border-radius: 3px;box-shadow: 0px 0px 5px white;"
+        }
+        console.log(flag);
+        flag = !flag;
+        console.log(flag);
+    },false);
+            
+    
+</script>
+
+</html>

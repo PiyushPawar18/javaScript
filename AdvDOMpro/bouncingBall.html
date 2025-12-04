@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball</title>
+    <style>
+        body {
+            background-image: url("../img/multipleballs.avif");
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+        }
+
+        h3 {
+            text-shadow: 0px 0px 20px #fff;
+        }
+
+        .container {
+            position: relative;
+            width: 80%;
+            height: 200px;
+            border: 1px solid white;
+            border-radius: 5px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 0px 15px #212121;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #ball {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* top:170px;
+            left:337px; */
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgb(177, 102, 115);
+            /* transition: all 0.5s ease-in; */
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Bouncing Ball</h3>
+    <div class="container">
+        <div id="ball"></div>
+    </div>
+
+    <script>
+        const box = document.querySelector(".container")
+        const ball = document.getElementById("ball")
+        console.log(box.clientWidth)
+        console.log(box.clientHeight)
+        console.log(ball.clientWidth)
+        let x = 10; 
+        let y = 10;
+        let dx = 3;
+        let dy = 4; //horizontal and vertical 
+
+        function moverBall(){
+            x += dx;
+            y +=dy;
+            ball.style.top = y +"px"
+            ball.style.left = x +"px"
+            
+            let boxWidth = box.clientWidth;
+            let boxHeight = box.clientHeight;
+            let ballSize = ball.clientWidth;
+
+            if(x + ballSize >= boxWidth || x <=0){
+                dx = -dx;
+                ball.style.background = randomColor();
+            }
+            if(y + ballSize >= boxHeight || y<=0){
+                dy = -dy;
+                ball.style.background = randomColor();
+            }
+            // requestAnimationFrame(moverBall)
+        }
+        setInterval(moverBall,20)
+        // requestAnimationFrame(moverBall);
+        function randomColor(){
+            return "#"+Math.floor(Math.random()*16777215).toString(16)
+        }
+
+        // function moverBall() {
+        //     x += dx;
+        //     y += dy;
+        //     // console.log(y,dy)
+
+        //     ball.style.top = y + "px";
+        //     ball.style.left = x + "px";
+
+        //     let boxWidth = box.clientWidth;
+        //     let boxHeight = box.clientHeight;
+        //     let ballSize = ball.clientWidth;  //height also same
+
+        //     if (x + ballSize >= boxWidth || x <= 0) {
+        //         dx = -dx  //convert positive = negative
+        //         ball.style.background = randomColor();
+        //     }
+        //     //bounce vertically
+        //     if (y + ballSize >= boxHeight || y <= 0) {
+        //         dy = -dy;
+        //         ball.style.background = randomColor();
+        //     }
+
+        // }
+        // let interval = setInterval(moverBall, 2 0);
+        // setTimeout(() => {
+        //     clearInterval(interval)
+        // },10000)
+        // function randomColor() {
+        //     return "#" + Math.floor(Math.random() * 16777215).toString(16);
+        // }
+    </script>
+</body>
+
+</html>  

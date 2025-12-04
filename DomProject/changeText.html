@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text Dynamically</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px 50px 40px;
+            border: 3px solid whitesmoke;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body style=" background-color:black; color:#fff">
+    <div class="container">
+        <h3 id="text">"Welcome!"</h3>
+        <button id="chanTextBtn">Change Text</button>
+    </div>
+</body>
+<script>
+    let btn = document.getElementById("chanTextBtn")
+    let text = document.getElementById("text")
+    let box = document.querySelector(".container")
+    // btn.onclick = () => text.innerText="Hello, JavaScript!"; 
+
+    //Using Event listener
+    btn.addEventListener("click",() =>{
+        text.innerText="Hello, JavaScript!"
+        setTimeout(() => {
+            // text.innerText="Lets Gooooooo"
+            btn.addEventListener("click",() => {
+                text.innerText = "Lets Goooooo"
+                btn.remove();
+                box.style.backgroundColor = "lightblue";
+                box.style.color = "black";
+            })
+        },1000)
+    })
+
+    //Using if - else
+    // let flag=true;
+    // btn.addEventListener("click",() => {
+    //     if(flag){
+    //         text.innerText="Hello, JavaScript!"
+    //     }
+    //     else{
+    //         text.innerText="Lets Gooooooo"
+    //     }
+    //     flag = !flag
+    // })
+</script>
+
+</html>

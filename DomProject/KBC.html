@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBC Quize</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+        }
+
+        body {
+            background: #212121;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        h2 {
+            margin: 10px 0px 0px 0px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .container p {
+            padding: 0px 20px;
+            margin: 10px 5px 5px 5px;
+        }
+
+        .container input {
+            height: 10px;
+            margin: 0px 0px 3px 30px
+        }
+
+        #submit {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #submit button {
+            padding: 5px;
+            border-radius: 5px;
+            background-color: orange;
+            color: #fff;
+            font-size: 12px;
+            margin: 10px 0px;
+        }
+
+        .result-box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+
+        #result {
+            height: 100%;
+            width: 100%;
+            max-width: 50%;
+            border: 1px solid #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 1s ease-in-out;
+            margin-bottom: 10px;
+            padding: 5px 0px;
+            text-align-last: center;
+        }
+
+        @media (max-width:500px) {
+            #result{
+                max-width: 90%;
+            }
+        }
+        @media (max-width:420px){
+            *{
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2>KBC Quize</h2>
+    <form action="">
+        <!-- <div class="container">
+            <p id="question">
+                1. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi est voluptatem similique
+            </p>
+            <label class="option">
+                <input type="radio" name="q1"> Piyush <br>
+                <input type="radio" name="q1"> Piyush <br>
+                <input type="radio" name="q1"> Piyush <br>
+                <input type="radio" name="q1"> Piyush <br>
+            </label>
+        </div>
+         -->
+    </form>
+    <!-- <div id="submit"><button type="submit" >
+            Submit
+        </button></div>
+    -->
+
+    <div class="result-box">
+        <div id="result">
+            <h4></h4>
+            <!-- <p>correct ans is 264 but you choose the 250</p> -->
+        </div>
+    </div>
+    <script src="./KBC.js"> </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diff Quotes</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            border: 3px solid white;
+            padding: 10px 20px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body style="background-color: #212121; color:#fff">
+    <div class="container">
+        <h3 id="quote">Honesty is the best loyalty</h3>
+    </div>
+</body>
+<script>
+    const quotes = [
+        "Honesty is the best loyalty",
+        "Kindness is the strongest power",
+        "Patience is the key to peace",
+        "Confidence is the secret to success",
+        "Respect is the root of trust",
+        "Hard work is the path to greatness",
+        "Gratitude is the heart of happiness",
+        "Discipline is the bridge to goals",
+        "Courage is the light in darkness",
+        "Forgiveness is the door to freedom",
+        "Simplicity is the ultimate wisdom",
+        "Focus is the art of mastery",
+        "Faith is the strength of the soul",
+        "Learning is the key to growth",
+        "Love is the language of life",
+        "Positivity is the seed of change",
+        "Humility is the sign of wisdom",
+        "Consistency is the power of success",
+        "Creativity is the soul of innovation",
+        "Empathy is the essence of humanity"
+    ];
+    const colors = [
+  "red",
+  "blue",
+  "green",
+  "yellow",
+  "orange",
+  "purple",
+  "pink",
+  "teal",
+  "brown",
+  "black"
+];
+    function showColors(){
+        let box = document.querySelector(".container");
+        let j = Math.round(Math.random()*10);
+        box.style.backgroundColor = colors[j]
+    }
+    function printQuotes(fn){
+        let quote = document.getElementById("quote");
+        let i = Math.floor(Math.random()*20);
+        quote.innerText = quotes[i]
+        fn()
+    }
+    setInterval(() => printQuotes(showColors), 1000);
+</script>
+
+</html>

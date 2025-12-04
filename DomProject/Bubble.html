@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Pop Upp</title>
+    <style>
+        body {
+            height: 100vh;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bubble {
+            position: absolute;
+            border: 2px solid white;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: lightblue;
+            color: black;
+            animation: grow 4s forwards;
+
+        }
+
+        @keyframes grow {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+                font-size: 10px
+            }
+
+            100% {
+                transform: scale(3);
+                opacity: 0;
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p class="bubble">start</p>
+</body>
+<script>
+    const colors = [
+        "lightgreen","red",
+        "blue","green",
+        "yellow","orange",
+        "purple","pink",
+        "brown","lightblue","white","#FF5733", '#33FF57', '#3357FF', '#F3F033', '#8E44AD'
+    ];
+    const text = [
+        "bye", "hello","gn","gm","hi","bubble"
+    ]
+    
+    let btn = document
+    btn.addEventListener("click", (e) => {
+        const circle = document.createElement('p');
+        circle.className = "bubble";
+        let x = e.clientX;
+        let y = e.clientY;
+        // console.log(e)
+        // console.log(e.clientX, e.clientY)
+
+        let i=Math.floor(Math.random()*colors.length);
+        circle.style.backgroundColor = colors[i]
+        let j=Math.floor(Math.random()*text.length);
+        circle.innerText = text[j]
+
+        circle.style.left = `${x - 25}px`;
+        circle.style.top = `${y - 25}px`;
+        document.body.appendChild(circle);
+        console.log(circle)
+
+        //delete the circle <p> elements
+        setTimeout(() => {
+            circle.remove();
+        },4000)
+    })
+</script>
+
+</html>

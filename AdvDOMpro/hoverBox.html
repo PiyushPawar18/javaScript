@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Box</title>
+    <style>
+        body {
+            height: 100vh;
+            background-color: #212121;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .container {
+            width: 90vw;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .container span {
+            width: 50px;
+            height: 50px;
+            border: 1px solid white;
+            border-radius: 5px;
+            background-color: lightblue;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0px 0px 5px #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span id="box1" class="box"></span>
+        <span id="box2" class="box"></span>
+        <span id="box3" class="box"></span>
+        <span id="box4" class="box"></span>
+    </div>
+</body>
+<script>
+    const container = document.querySelector(".container");
+    container.addEventListener("mouseover", (e) => {
+        console.log(e.target.id);
+        console.log(e.target)
+        console.log(e.target.tagName)
+        if (e.target.tagName === "SPAN") {
+            let boxStyle = document.getElementById(e.target.id)
+            boxStyle.style.backgroundColor = randomColor();
+            boxStyle.style.transform = "scale(1.2)"
+        }
+        container.addEventListener('mouseout', (e) => {
+            if (e.target.tagName === "SPAN") {
+                let boxStyleremove = document.getElementById(e.target.id)
+                boxStyleremove.style.background = "lightblue";
+                boxStyleremove.style.transform = "none"
+            }
+        })
+    })
+
+    function randomColor() {
+        return "#" + Math.floor(Math.random() * 16777257).toString(16);
+    }
+
+    // const boxes = document.querySelectorAll(".box");
+
+    // boxes.forEach((box) => {
+    //     box.addEventListener("mouseenter", () => {
+    //         box.style.transform = "scale(1.2)";
+    //         box.style.backgroundColor = randomColor();
+    //     });
+
+    //     box.addEventListener("mouseleave", () => {
+    //         box.style.transform = "scale(1)";
+    //         box.style.backgroundColor = "#3498db";
+    //     });
+    // });
+
+</script>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crud Operation</title>
+    <link rel="stylesheet" href="crud.css">
+</head>
+
+<body>
+    <h3 id="title"> Employee </h3>
+    <div class="container-details">
+        <div>
+            <label for="name">Name</label><input type="text" id="name" placeholder="Enter emp name">
+        </div>
+        <div >
+            <label for="name">Age</label><input type="number" 
+            id="age"
+            placeholder="Enter emp Age">
+        </div>
+        <div>
+            <label for="name">City</label><input type="text" 
+            id="city"
+            placeholder="Enter emp city">
+        </div>
+        <button id="submit" class="btn">Submit</button>
+    </div>
+    <div class="table">
+        <table>
+            <tr>
+                <th>Sr</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Modification</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Piyush pawar dgegwsgsgfe esg wawewg</td>
+                <td>20</td>
+                <td>mumbai</td>
+                <td >
+                    <div id="Modification">
+                    <button id="Delete" class="btn-modify">Delete</button>
+                    <button id="Edit" class="btn-modify">Edit</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <script src="crud.js"></script>
+</body>
+
+</html>

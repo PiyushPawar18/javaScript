@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            background-color: #212121;
+            color: #fff;
+            position: relative;
+        }
+
+        .ball {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: lightblue;
+            transition: top 0.2s ease-out, left 0.2s ease-out;;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ball"></div>
+</body>
+<script>
+    const body = document.querySelector("body");
+    const ball = document.querySelector(".ball");
+    console.log(body.clientX)
+
+    body.addEventListener("mousemove",(e) => {
+        console.log(e.clientX,e.clientY)
+        let x = e.clientX;
+        let y= e.clientY
+        ball.style.top = `${y-8}px`;
+        ball.style.left = x + "px";
+    })
+</script>
+
+</html>

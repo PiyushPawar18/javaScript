@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Press</title>
+    <style>
+        body{
+            height: 100vh;
+            background-color: #212121;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .key-container{
+            height: 40vh;
+            width: 70%;
+            box-shadow: 0px 0px 10px #fff;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+        .key-container h3{
+            color:white;
+            
+        }
+        @keyframes flash {
+            0%{opacity: 0;}
+            50%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="key-container">
+        <h3>Piyu</h3>
+    </div>
+</body>
+<script>
+    const body=document.querySelector("body")
+    const keyPress = document.querySelector("h3")
+    document.addEventListener("keypress",(e) => {
+        keyPress.style.animation = "none"
+        keyPress.offsetHeight;
+        console.log(e.key)
+        // console.log(key) //throug error
+        keyPress.innerText = e.key
+        body.style.backgroundColor = changeBg()
+        keyPress.style.animation = "flash 1s forwards"
+    })
+    function changeBg(){
+        return "#" + Math.floor(Math.random()*16777215).toString(16)
+    }
+</script>
+</html>

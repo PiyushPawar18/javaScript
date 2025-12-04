@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountDown Timer</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #212121;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .timer-box {
+            /* border:1px solid white; */
+            border-radius: 3px;
+            padding: 10px 20px;
+            background-color: #555;
+            box-shadow: 0px 0px 10px #fff;
+            text-align: center;
+        }
+
+        .timer {
+            margin: 2px 10px 5px;
+            padding: 3px 10px;
+            box-shadow: 0px 0px 10px #fff;
+            border-radius: 3px;
+            transition: all 1.5s ease-in-out;
+            animation: blink 1s linear infinite;
+            color:#8ed590
+        }
+
+        .start-btn {
+            margin: 2px 10px 5px;
+            padding: 3px 10px;
+            box-shadow: 0px 0px 10px #212121;
+            border-radius: 3px;
+            border: none;
+        }
+        
+        @keyframes blink {
+            0% {opacity: 1;}
+            50% {opacity: 0.2;}
+            100%{opacity: 1;}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="timer-box">
+        <h4 class="timer">50</h4>
+        <!-- <button class="start-btn">Start</button> -->
+        <audio id="audio" src="../img/thud-sound-effect-405470.mp3"></audio>
+    </div>
+</body>
+<script>
+    // let strbtn = document.querySelector(".start-btn")
+    let timer = document.querySelector(".timer");
+    let audio = document.querySelector("#audio");
+    let count = timer.innerHTML;
+    let interval = setInterval(() => {
+        if (count > 0) {
+            timer.innerHTML = count - 1;
+            // console.log(timer.innerHTML)
+            count--;
+        }
+        if(count == 0) {
+            timer.innerHTML = "Time's up!"
+            timer.style.cssText = "font-size:16px; color:red";
+            console.log("Time’s up!")
+            clearInterval(interval);
+            audio.play().catch(() => {
+                console.log("Audio still blocked");
+            });
+        }
+    }, 1000)
+
+    // strbtn.addEventListener('click',() => {
+    //     let count = timer.innerHTML;
+    //     console.log(count);
+    //     let interval = setInterval(() => {
+    //         if(count>0){
+    //             timer.innerHTML = count - 1;
+    //             console.log(timer.innerHTML)
+    //             count--;
+    //         }
+    //     },1000)
+    // })
+</script>
+
+</html>

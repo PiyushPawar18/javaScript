@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+}
+.container{
+    width:100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg,#153677,#4e085f);
+    padding:10px;
+}
+.todo-app{
+    width:100%;
+    max-width: 340px;
+    background:#fff;
+    margin: 20px auto 20px;
+    padding: 20px 30px 20px;
+    border-radius: 10px;
+}
+.todo-app h2{
+    color: #002765;
+    display:flex;
+    align-items: center;
+    margin-bottom:10px;
+    font-size: 15px;
+}
+.todo-app h2 img{
+    width: 40px;
+    height: 30px;
+    padding-left: 10px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #edeef0;
+    border-radius: 20px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+input{
+    width:100%;
+    flex:1;
+    border:none;
+    outline:none;
+    background: transparent;
+    padding:2px;
+    font-size: 10px;
+}
+button{
+    border:none;
+    outline:none;
+    padding:13px 50px;
+    background-color: #ff5945;
+    color:#fff;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+ul li{
+    font-size: 10px;
+    list-style: none;
+    padding:10px 25px 12px 25px;
+    cursor: pointer;
+    position: relative;
+}
+ul li::before{
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-image: url(../img/whitePlanewp.avif);
+    background-size: cover;
+    background-position: top;
+    top:5px;
+    left:-5px;
+}
+ul li.checked{
+    color:#555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(../img/check.png);
+    background-size:cover;
+}
+ul li span{
+    position: absolute;
+    right:0;
+    top:5px;
+    width:20px;
+    height: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+ul li span:hover{
+    border-radius: 50%;
+    background-color: #ff5945;
+    color:#edeef0;
+}
+
+@media (max-width:320px){
+    .row{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    input{
+        padding: 20px;
+    }
+    button{
+        margin: 10px 20px 5px -10px;
+    }
+    input,button{
+        width:100%;
+    }
+}

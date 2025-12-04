@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 50vw;
+            height: 20vh;
+            border: 3px solid white;
+            border-radius: 15px;
+            /* overflow: auto;   */
+            /* adds scrollbars */
+
+        }
+
+        #img {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        #next,
+        #prev {
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="../img/manclassic.avif" alt="" id="img">
+    </div>
+    <br>
+    <span>
+        <button id="next">Next</button>
+        <button id="prev">Prev</button>
+    </span>
+
+</body>
+<script>
+    const images = [
+        "../img/manclassic.avif",
+        "../img/avengers.jpg",
+        "../img/coool.jpg",
+        "../img/happyduo.avif",
+        "../img/vege2.jpg"
+    ];
+
+    const img = document.getElementById("img")
+    const next = document.getElementById("next")
+    const prev = document.getElementById("prev")
+    let i = 0;
+
+    function UpdateImg() {
+        img.setAttribute("src", images[i])
+        //prev delete
+        if (i === 0) {
+            // prev.style.display="none"
+            prev.style.visibility = "hidden"
+        }
+        else {
+            // prev.style.display="inline-block"
+            prev.style.visibility = "visible";
+        }
+
+        //next delete
+        if (i == images.length - 1) {
+            next.style.visibility = "hidden"
+        }
+        else {
+            next.style.visibility = "visible";
+        }
+
+    }
+    UpdateImg(i);
+    next.addEventListener("click", () => {
+        i++;
+        UpdateImg(i)
+
+    })
+    prev.addEventListener("click", () => {
+        i--;
+        UpdateImg(i)
+    })
+
+</script>
+
+</html>

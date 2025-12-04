@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0px;
+            align-items: 0px;
+            font-family: "Poppins", sans-serif;
+        }
+        body{
+            height: 100vh;
+            background: linear-gradient(to right, #74b9ff, #0984e3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .weather-container{
+            background-color: #fff;
+            width: 400px;
+            border-radius: 10px;
+            padding:10px 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+            transition : 0.3s ease;
+        }
+        .weather-container:hover{
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            transform: translateY(-5px);
+        }
+        .title{
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            padding:10px;
+            color:#0984e3;
+        }
+        .weather-container:hover .title{
+            color:white;
+        }
+        .search-box{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin:10px 0px 25px;
+            background: #f1f3f6;
+            padding:10px 20px;
+            border-radius: 40px;
+        }
+        .search-box input{
+            flex:1;
+            height: 40px;
+            border:none;
+            outline:none;
+            background-color: transparent;
+            font-size: 16px;
+        }
+        .search-box button{
+            width:80px;
+            padding:10px 10px;
+            border-radius: 20px;
+            font-size: 16px;
+            background-color: #0984e3;
+            border:none;
+            outline: none;
+            color:white;
+            opacity:1;
+        }
+        .search-box button:hover{
+            opacity: 0.5;
+        }
+        .ans-container{
+            border-radius: 20px;
+            font-size: 16px;
+            background-color: lightblue;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap:20px;
+            display:none;
+        }
+        .temperature{
+            text-align: center;
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-container">
+        <div class="title">🌤️ Weather Forecast</div>
+        <div class="search-box">
+            <input type="input" placeholder="Enter city Name...">
+            <button>Search</button>
+        </div>
+        <div class="ans-container">
+            <div class="temperature">25°C</div>
+        </div>
+    </div>
+</body>
+<script>
+    const input = document.querySelector("input");
+    const submit = document.querySelector("button");
+    const ansConatiner = document.querySelector(".ans-container")
+    const temp = document.querySelector(".temperature");
+    submit.addEventListener("click" , () => {
+        console.log(input.value);
+        let promises = fetch(`http://api.weatherapi.com/v1/current.json?key=0d7ad9d2309e46bf95a160207252010&q=${input.value}&aqi=no`);
+        console.log(promises)
+        promises.then((data) => data.json())
+        .then((data) => {
+            console.log(data);
+            console.log(data.current.temp_c)
+            ansConatiner.style.display = "flex"
+            temp.innerHTML = `Temperature := ${data.current.temp_c}°C`;
+        })
+        .catch((err) => {
+            console.log("error:= ",err)
+            temp.innerHTML = alert("enter a valid city")
+        })
+        .finally(console.log("always works"))
+        
+    })
+    // let promises = fetch(`http://api.weatherapi.com/v1/current.json?key=0d7ad9d2309e46bf95a160207252010&q=Mumbai&aqi=no`);
+    // console.log(promises)
+    // promises.then((data) => data.json())
+    // .then((data) => {
+    //     console.log(data);
+    //     console.log(data.current.temp_c)
+    // })
+</script>
+</html>

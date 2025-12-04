@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+    margin:0px;
+    padding: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular','arial';
+}
+body{
+    background: #212121;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 2rem;
+}
+#title{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+.container-details{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+}
+.container-details div{
+    width: 80%;
+    max-width: 400px;
+    background-color: #555;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+label{
+    width: 20%;
+    background-color: lightblue;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color:#333;
+    border-radius: 10px;
+}
+input{
+    width:80%;
+    height: 2rem;
+    padding:0px 8px;
+    border:none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: transparent;
+    color: #fff;
+}
+.btn{
+    width:20%;
+    height: 2rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color:rgb(242, 179, 62);
+    color:#fff;
+    margin-bottom: 2rem;
+}
+.btn:hover{
+    background-color: rgb(230, 10, 10);
+    cursor: pointer;
+}
+.table{
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom:2rem;
+}
+table{
+    border:1px solid #fff;
+    padding:10px;
+}
+table th{
+    background-color: lightblue;
+}
+table tr,td,th{
+    padding:3px 5px;
+    border:1px solid #fff;
+    text-align: center;
+}
+
+#Modification{
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:4px;
+    
+}
+.btn-modify{
+    padding:5px;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    background-color: lightgoldenrodyellow;
+}

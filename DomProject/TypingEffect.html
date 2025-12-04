@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Effect</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            height: 100vh;
+            background-color: #212121;
+            color:white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap:20px;
+        }
+        #container{
+            width:70vw;
+            border:1px solid white;
+            border-radius: 5px;
+            padding: 10px 20px ;
+            margin:0px 40px;
+            /* ✅ allow long text to wrap */
+            /* word-wrap: break-word; */
+            overflow-wrap: break-word; 
+        }
+        #passage{
+            text-align: justify;
+            text-indent: 50px;
+            text-align-last: center;
+            white-space: pre-wrap;   /* ✅ keeps all spaces, tabs, and newlines */
+        }
+        #heading{
+            text-align: center;
+            color: lightblue;
+        }
+        #Mode{
+            padding: 5px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h3 id="heading">KyaHaiLorem</h3>
+        <p id="passage">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse ipsa neque error quis, expedita facilis officia aperiam enim quidem laboriosam cum natus, ullam itaque ex fugit id quo commodi distinctio consequatur porro voluptatem mollitia! Temporibus dolor tempore non accusantium nam!</p>
+    </div>
+    <button id="Mode">Light</button>
+</body>
+<script>
+    let passage = document.getElementById("passage")
+    let box = document.getElementById('container');
+
+    passage.style.display = "none"
+
+    let p = document.createElement("p")
+    p.setAttribute("id","passage")
+    box.appendChild(p)
+
+    let i=0;
+    let timer = setInterval(() => {
+        if(i <= passage.innerText.length){
+            p.innerText += passage.innerText[i];
+            i++;
+        }
+        else{
+            console.log("Stopping interval...");
+            clearInterval(timer); // stops itself
+        }
+    },100)
+
+    //**************** Mode
+    let mode = document.getElementById("Mode");
+    let body = document.querySelector("body");
+    let h3 = document.querySelector("#heading")
+    let flag = false;
+    mode.addEventListener('click' , () => {
+        if(flag){
+            body.style.backgroundColor = "#212121"
+            body.style.color = "white"
+            box.style.cssText = "border-color : white;";
+            mode.innerText = "Light"
+            mode.style.backgroundColor = "white"
+            mode.style.color="#212121"
+            h3.style.color = "lightblue";
+        }
+        else{
+            body.style.backgroundColor = "white"
+            body.style.color = "black"
+            box.style.cssText = "border-color : black;";
+            mode.innerText = "Dark"
+            mode.style.backgroundColor = "#292727"
+            mode.style.color="white"
+            h3.style.color = "orange";
+        }
+        flag = !flag;
+        console.log(flag)
+    })
+</script>
+</html>

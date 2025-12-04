@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble and Capturing</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: whitesmoke;
+        }
+
+        #heading {
+            text-align: center;
+        }
+
+        .img {
+            /* width:100px; */
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h4 id="heading">Amazing images</h4>
+    <ul class="images">
+        <li class="img1"><img src="../img/avengers.jpg" alt="" class="img">
+        </li>
+        <li class="img2"><img src="../img/coool.jpg" alt="" class="img">
+        </li>
+        <li class="img3"><img src="../img/blackmountain.avif" alt="" class="img">
+        </li>
+        <li class="img4"><img src="../img/happyduo.avif" alt="" class="img"><br><a href="https://google.com" id="google"
+                style="color:white;" target="_blank">Google</a>
+        </li>
+    </ul>
+</body>
+<script>
+    //************* bubbole mode value default = false (LIFO) ****************
+    // const images = document.querySelector(".images");
+    // const img1 = document.querySelector(".img1")
+    // images.addEventListener("click", () => {
+    //     console.log("click inside the ul")
+    // }, false)
+    // img1.addEventListener("click", (e) => {
+    //     console.log("img1 is clicked")
+    //     e.stopPropagation() //stop propagration to down side 
+    //     // e.stopImmediatePropagation()
+    // }, false)
+
+    //************** capturing mode value = true (LiLO) ********************
+    // const images = document.querySelector(".images");
+    // images.addEventListener("click" , () => {
+    //     console.log("click inside the ul")
+    // },true)
+    // const img1 = document.querySelector(".img1")
+    // img1.addEventListener("click" , () => {
+    //     console.log("img1 is clicked")
+    // },true)
+
+    document.getElementById("google").addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("google clicked");
+    }, false)
+
+    // ************* My Approach
+    // const allimgs = document.getElementsByClassName("img");
+    // console.log(allimgs)
+    // for(let i=0;i<allimgs.length;i++){
+    //     allimgs[i].addEventListener("click" , () => {
+    //         allimgs[i].style.display = "none";
+    //     })
+    // }
+
+
+    //************* My Approach using event dalegant
+    const allimgs = document.querySelector(".images")
+    console.log(allimgs)
+    allimgs.addEventListener('click' , (e) => {
+        // console.log(e.target)
+        // console.log(e.target.parentNode)
+        console.log(e.target.tagName)
+        // console.log(e.target.id)
+        console.log(e.target.className)
+        if(e.target.tagName === "IMG"){
+        let removeIt = e.target.parentNode;
+        removeIt.remove(); //1 way
+        // removeIt.parentNode.removeChild(removeIt); //2 way
+        }
+        else{}
+    })
+</script>
+
+</html>

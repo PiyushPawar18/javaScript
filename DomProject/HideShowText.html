@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text Dynamically</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px 50px 40px;
+            border: 3px solid whitesmoke;
+            border-radius: 15px;
+        }
+
+        #text {
+            text-align-last: center;
+            visibility: visible;
+        }
+
+        .container div {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body style=" background-color:black; color:#fff">
+    <div class="container">
+        <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, magnam.</p>
+        <div><button id="HideShowBtn">Hide Text</button></div>
+    </div>
+</body>
+<script>
+    const btn = document.getElementById("HideShowBtn");
+    let text = document.getElementById("text")
+    //Using flag
+    let flag = true
+    btn.addEventListener("click", () => {
+        // *************** Using flag *********************
+        // if (flag) {
+        //     text.style.visibility = "hidden";
+        //     btn.innerText = "Show text"
+        // } else {
+        //     text.style.visibility = "visible";
+        //     btn.innerText = "Hide text"
+        // }
+        // flag = !flag
+
+        // *************** Using getComputedStyle *************
+        let currentVisibility = getComputedStyle(text).visibility;
+
+        if (currentVisibility === "visible") {
+            text.style.visibility = "hidden";
+            btn.innerText = "Show Text";
+        } else {
+            text.style.visibility = "visible";
+            btn.innerText = "Hide Text";
+        }
+    })
+
+    //My apporch
+    // btn.addEventListener("click",() => {
+    //     text.style.cssText = "visibility: hidden;"
+    //     btn.innerText = "Show Text"
+    //     btn.addEventListener("click",() =>{
+    //         text.style.cssText = "visibility: visible;"
+    //         btn.innerText = "Hide Text"
+    //     })
+    // })
+</script>
+
+</html>
