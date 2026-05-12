@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // const promiseOne = new Promise();
 // const date = new Date();
 
@@ -24,7 +23,6 @@ console.log(user1); //the output is deff because user2 is override
 const user11 = new User("piyush","true",3);
 const user22 = new User('atharv',"false",2);
 //if we cannot return this [then also it give a this data ]
-=======
 // const promiseOne = new Promise();
 // const date = new Date();
 
@@ -50,5 +48,4 @@ console.log(user1); //the output is deff because user2 is override
 const user11 = new User("piyush","true",3);
 const user22 = new User('atharv',"false",2);
 //if we cannot return this [then also it give a this data ]
->>>>>>> e532572 (createa a practive 6 hard questios)
 console.log(user11)

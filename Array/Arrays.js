@@ -39,7 +39,7 @@ let myArr=[1,2,3,4,5];
 // myArr.shift(); //remove start
 // splice(start,deleteCount,item1,item2...)
 // myArr.splice(2,2); //remove   //from 2 index -> 2 items remove 
-// myArr.splice(2,0,3,4); //adding  //from 2 index -> 0 remvoe -> 3,4 items add
+// myArr.splice(2,0,3,4); //adding  //from 2 index -> 0 remove -> 3,4 items add
 myArr.splice(2)  // start at index 2, delete everything after
 // console.log(myArr);
 

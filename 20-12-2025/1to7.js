@@ -13,6 +13,7 @@ console.log(1 == '1');
 
 console.log(typeof({}))
 console.log(typeof([]))
+console.log(typeof(undefined))
 
 console.log(2 + '2');
 
@@ -27,20 +28,19 @@ function reverseString(s) {
 // console.log(reverseString(str))
 
 // const arr=[1,5,8,1,9,3];
-// console.log(arr.find((a) => a > 6));
+// console.log(arr.find((a) => a > 6)); 
 // console.log(arr.every((a) => a > 0));
 // console.log(arr.reduce((a,b) => a+b));
 // console.log(arr.filter(num => num));
 // console.log(arr.map(num => num++)); //[1,5,8,1,9,3]
 // console.log(arr.map(num => ++num)); //[2,6,9,2,10,4]
 
-
 // const array = [1,2,3,4,5];
 // const [a,b,c,d,e,f] = array;
 // console.log(array[2],c)  //3
 
 // const array = [1,2,3];
-// const array1 = [...array]
+// // const array1 = [...array]
 // console.log(array,array1)
 // array1.push(4)
 // console.log(array,array1)

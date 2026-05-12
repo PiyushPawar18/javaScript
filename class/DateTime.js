@@ -18,20 +18,20 @@ console.log(date);
 const date2=new Date();
 //Date set
 //Date get 
-console.log(date2.setDate(27));  //27
-console.log(date2.setYear(2024));
-console.log(date2.setMonth(8));
-// console.log(date.setTime());
-console.log(date2.setHours(12));
-console.log(date2.setMinutes(1));
-console.log(date2.setSeconds(34));
-console.log(date2.setMilliseconds(53));
+// console.log(date2.setDate(27));  //27
+// console.log(date2.setYear(2024));
+// console.log(date2.setMonth(8));
+// // console.log(date.setTime());
+// console.log(date2.setHours(12));
+// console.log(date2.setMinutes(1));
+// console.log(date2.setSeconds(34));
+// console.log(date2.setMilliseconds(53));
 
-console.log(date2)
-console.log(date2.toString())
+// console.log(date2)
+// console.log(date2.toString())
 
-console.log(date.toLocaleDateString());
-console.log(date.toLocaleTimeString());
-console.log(date.toLocaleString());
+// console.log(date.toLocaleDateString());
+// console.log(date.toLocaleTimeString());
+// console.log(date.toLocaleString());
 
 

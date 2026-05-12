@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 function createUse(username,score){
     this.username = username;
     this.score = score;
@@ -21,7 +21,6 @@ const p1 = createUse("piyush",20);
 const p2 =new createUse("amey",10);
 p2.printMe(); //works properly
 
-=======
 function createUse(username,score){
     this.username = username;
     this.score = score;
@@ -44,4 +43,3 @@ const p1 = createUse("piyush",20);
 const p2 =new createUse("amey",10);
 p2.printMe(); //works properly
 
->>>>>>> e532572 (createa a practive 6 hard questios)

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //suppose
 const userName = "piyush    ";
 console.log(userName.length); //10 
@@ -60,7 +59,6 @@ String.prototype.trueLength = function(){
 }
 anotherUserName.trueLength()
 "piyush".trueLength();
-=======
 //suppose
 const userName = "piyush    ";
 console.log(userName.length); //10 
@@ -122,5 +120,4 @@ String.prototype.trueLength = function(){
 }
 anotherUserName.trueLength()
 "piyush".trueLength();
->>>>>>> e532572 (createa a practive 6 hard questios)
 "tushar".trueLength();

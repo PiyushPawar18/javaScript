@@ -15,7 +15,7 @@
 // let s1="piyush",s2="pawar";//output:=ppiaywuasrh
 // function abc(s1,s2){
 //     let s3="";
-//     l1=s1.length;
+//     l1=s1.length;  
 //     l2=s2.length;
 //     let max=Math.max(l1,l2);
 //     for(let i=0;i<max;i++){
