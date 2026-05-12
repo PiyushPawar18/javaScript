@@ -6,9 +6,9 @@
 // a=10;  
 // console.log(a);  //if we canot declared it treated as global variable (var)
 
-// console.log(a); //Cannot access 'a' before initialization
-// let a;
-// console.log(a); //undefined
+// console.log(b); //Cannot access 'a' before initialization
+// let b;
+// console.log(b); //undefined
 
 // if([]){
 //     console.log("my name is piyush");
@@ -18,7 +18,6 @@
 
 // console.log([] == false); //false->0 //[] -> primitive -> "" ->0 //0==0 //true
 // console.log([1,2]==false); //[1,2] -> primitive using [1,2].toString() -> "1,2" -> NaN //NaN==0//false
-
 // console.log("piyush"-100); //Nan //"piyush" -> NaN //Nan-100 = NaN
 
 const arr76 = ['c', 3, 4, 'd', 9, "piyush", 89];

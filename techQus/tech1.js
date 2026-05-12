@@ -107,9 +107,9 @@
 // console.log(a,b,p);
 
 // const arr=[1,2,3,4]
-// // const ans=arr.map((e)=>e>3) [ false, false, false, true ]
-// const ans=arr.map((e)=> {
-//     e>3 }) //[ undefined, undefined, undefined, undefined ]
+// const ans=arr.map((e)=>e>3) //[ false, false, false, true ]
+// // const ans=arr.map((e)=> {
+// //     e>3 }) //[ undefined, undefined, undefined, undefined ]
 // console.log(ans);
 
 

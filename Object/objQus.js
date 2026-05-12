@@ -5,16 +5,16 @@ let person={
     city:"mumbai"
 }
 // for(let key in person){
-//     console.log(person[key]);
+//     console.log(key,":",person[key]);
 // }
 // console.log(Object.values(person));
 
 
 // 2. Add a new property hobby to an existing object without editing the original declaration.
 function addHobby(obj){
-    obj.hobby=["cricket","drawing","singing","swimming"]
+    // obj.hobby=["cricket","drawing","singing","swimming"]
     // obj["hobby"]="cricket"
-    // Object.assign(person,{"hobby":"cricket"})
+    Object.assign(person,{"hobby":"cricket"})
     console.log(obj);
 }
 // addHobby(person)
@@ -101,7 +101,7 @@ function MergeObjects(obj1,obj2){
 obj1 = {a:1, b:2};  
 function convertObj_Arr(obj){
     //using a Object.entries(obj_name)
-    console.log(Object.entries(obj));
+    // console.log(Object.entries(obj));
     Object.entries(obj).forEach(([k,v]) => console.log(k,v));
     //using a Object.keys(obj_name)
     Object.keys(obj).forEach(k => console.log(k,obj[k]))
@@ -191,6 +191,7 @@ function highestValue(obj){
     console.log(maxvalue);
     maxKey=Object.keys(obj).find(k => obj[k]===maxvalue)
     console.log(maxKey);
+
 }
 // highestValue(scores)
 
@@ -199,14 +200,14 @@ function highestValue(obj){
 
 obj={a:1, b:2, c:1, d:3} // {a:1, b:2, d:3}
 function duplicate(obj){
-    let duplicateObj={}
+    let ans = {}
     for(let key in obj){
-        // if(!duplicateObj.includes(obj)){
-        //     duplicateObj=obj[key]
-        // }
-        if(obj[key] == `1`)
+        if(!ans[obj[key]])
+        {
+            ans[key]=obj[key]
+        }
     }
-    console.log(duplicateObj);
+    console.log(ans)
     
 }
 duplicate(obj)

@@ -86,10 +86,10 @@ let obj={
 // //newstr: Symbol(hello) 
 
 //function add in object
-// obj.newfuc = function(){
-//     console.log("hello Js ");
-// }
-// // console.log(obj.newfuc);  //[Function (anonymous)]
+obj.newfuc = function(){
+    console.log("hello Js ");
+}
+// console.log(obj.newfuc);  //[Function (anonymous)]
 // console.log(obj.newfuc());
 // obj.newfuc2 =  function(){
 //     console.log(`hello Js user, my name is ${obj.name} 

@@ -12,7 +12,7 @@
 // console.log(myArr[1]); //1
 // console.log(myArr[4]); //4
 // console.log(myArr[5]); //undefined
-// console.log(myArr["3"]); //3
+// console.log(myArr["3"])//3; 
 // console.log(myArr["one"]); //undefined (Array index accessed only integers values)
 // console.log(myArr[-1]);  //undefined
 
@@ -31,7 +31,7 @@
 //                    Array methods
 
 // 1.Adding/Removing
-// let myArr=[1,2,3,4,5];
+let myArr=[1,2,3,4,5];
 // console.log(myArr);
 // myArr.push(6); //add end
 // myArr.pop(); //remove end
@@ -40,7 +40,7 @@
 // splice(start,deleteCount,item1,item2...)
 // myArr.splice(2,2); //remove   //from 2 index -> 2 items remove 
 // myArr.splice(2,0,3,4); //adding  //from 2 index -> 0 remvoe -> 3,4 items add
-// myArr.splice(2)  // start at index 2, delete everything after
+myArr.splice(2)  // start at index 2, delete everything after
 // console.log(myArr);
 
 // 2.Searching
@@ -51,9 +51,9 @@
 // console.log(myArr.includes(0)); //false
 //find(fn) $ findIndex(fn)
 // let val=myArr.find(num => num>4);
-// console.log(val); //5 is greater than 4
+// console.log(val); //5 is gren 4
 // // Agar koi match nahi mila → undefined.
-// val=myArr.findIndex(num => num>4);
+// val=myArr.findInater thadex(num => num>4);
 // console.log(val);  // 4 (index of 5)
 
 // 3.Conversion

@@ -34,10 +34,11 @@
 // console.log(str.trim);
 
 // //slice
-// str="js means JavaScript" ;
+str="js means JavaScript" ;
 // console.log(str.slice(0,3));  //slice(start,end-1)  //js
 // console.log(str.slice(-10,));  //JavaScript //negative value allow
-// console.log(str.substring(-8,)); //negative treated as 0 so 0-all //js means JavaScript
+// console.log(str.slice(-2,));  //JavaScript //negative value allow
+// console.log(str.substring(2,)); //negative treated as 0 so 0-all //js means JavaScript
 
 // //replace
 // str="js means JavaScript" ;
@@ -56,7 +57,7 @@
 
 
 // //array->string
-// let arr=[1,2,[3,4,[[5]]],6,7];
+let arr=[1,2,[3,4,[[5]]],6,7];
 // console.log(arr.flat(Infinity)); //[ 1, 2, 3, 4, 5, 6, 7]
 // console.log(arr.toString().length);  //13
 // console.log(arr.toString()); //1,2,3,4,5,6,7
@@ -67,3 +68,5 @@
 // console.log(new_arr.split(",")) //[ '1', '2', '3', '4', '5', '6', '7']
 // console.log(new_arr.split("4")) //[ '1,2,3,', ',5,6,7' ]
 // console.log(Array.from(new_arr)); // [ '1', ',', '2', ',', '3', ',', '4', ',', '5', ',', '6', ',', '7 ]
+
+console.log(arr.join(','));

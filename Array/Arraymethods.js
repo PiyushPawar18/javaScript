@@ -1,10 +1,10 @@
-// let arr1=[1,2,3,4,5];
-// // let result=arr1.filter((ele) => ele=5); //each itrection ele is 5(truthy value) [ 1, 2, 3, 4, 5 ] 
+let arr1=[1,2,3,4,5];
+// let result=arr1.filter((ele) => ele=3); //each itrection ele is 5(truthy value) [ 1, 2, 3, 4, 5 ] 
 // let result=arr1.filter((ele) => ele=0); //each itrection ele is 0(falsy value) []
-// // let result=arr1.filter((ele) => ele>5); //[]
-// // let result=arr1.map((ele) => ele=5); //[ 5, 5, 5, 5, 5 ]
-// // let result=arr1.map((ele) => ele>5); //[ false, false, false, false, false ]
-// // let result=arr1.map((ele) => ele<5); //[ true, true, true, true, false ]
+// let result=arr1.filter((ele) => ele>5); //[]
+// let result=arr1.map((ele) => ele=5); //[ 5, 5, 5, 5, 5 ]
+// let result=arr1.map((ele) => ele>5); //[ false, false, false, false, false ]
+// let result=arr1.map((ele) => ele<5); //[ true, true, true, true, false ]
 // console.log(result)
 
 let arr=[1,2,3,4,5]

@@ -8,7 +8,7 @@
 //     }
 // }
 // let result=arr.reduce((a,b) => a.length>b.length?a:b);
-// // console.log(result);
+// console.log(arr,result);
 
 // // console.log(b);
 
@@ -49,23 +49,25 @@
 
 // //function curing(couring)
 
-// // for(let i=0;i<100;i++){
-// //     console.log(i);
-// // }
-// // setTimeout(function() {
-// //     console.log("hello")
-// // },1000)
-// // setTimeout(function(){
-// //     console.log("piyush")
-// // },2000)
-// // console.log("hodhgewhgw");
-// // let intervalID=setInterval(function() {
-// //     console.log("hey how are you");
-// // },500);
-// // setTimeout(function(){
-// //     clearInterval(intervalID);
-// //     console.log("interval is stop");
-// // },5000);
+// for(let i=0;i<100;i++){
+//     console.log(i);
+// }
+// setTimeout(function() {
+//     console.log("hello")
+// },1000)
+// setTimeout(function(){
+//     console.log("piyush")
+// },2000)
+
+// console.log("hodhgewhgw");
+
+// let intervalID=setInterval(function() {
+//     console.log("hey how are you");
+// },500);
+// setTimeout(function(){
+//     clearInterval(intervalID);
+//     console.log("interval is stop");
+// },5000);
 
 // let arr2=[1,2,3,4,5,1,2];
 // let arr3=[];
@@ -83,7 +85,7 @@
 //         dupValue.push(sort_arr[i]);
 //     }
 // }
-// // console.log(dupValue);
+// console.log(dupValue);
 
 // // let str_arr=["b","d","c","a"]
 // // let cap_arr=str_arr.join("").toUpperCase().split("");

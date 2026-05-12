@@ -111,3 +111,16 @@ function User(name) {
 
 let u1 = new User("Piyush");
 console.log(u1);
+
+
+//we want to call function immediately and
+//golbal scope ke polution se problem hoti hai kai bar to hata ne keliye ham use karte hai 
+// IIFE (Immidiately invoke function Expression)
+(function () {
+  console.log("Worked")
+})(); //semicolon is compalsary to execute aother IIFE also
+((name) => {
+  console.log("Worked",name)
+})("piyu");
+//funtions declaration //function call
+// ()()

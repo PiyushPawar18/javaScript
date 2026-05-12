@@ -14,8 +14,15 @@ result=arr3.map(v => v+5);
 // console.log(result); // 👉 Output: [ 10, 15, 20, 25 ]
 
 //4. ["a", "b", "c"] → convert to uppercase
+
+
+
+
+
+
 let arr=["a","b","c"];
-console.log(arr.join("").toUpperCase().split("")); //👉 Output: [ 'A', 'B', 'C' ]
+// console.log(arr.map((v,i) => v.toUpperCase()))
+// console.log(arr.join("").toUpperCase().split("")); //👉 Output: [ 'A', 'B', 'C' ]
 
 //5. Q: [1, 2, 3, 4, 5] → find sum of all numbers
 arr=[1,2,3,4,5];
@@ -112,5 +119,10 @@ console.log(result)
 //18. Q: ["apple", "banana", "kiwi"] → keep only fruits with length > 4, convert to uppercase, then join with "-"
 // Output: "APPLE-BANANA"
 arr=["apple", "banana", "kiwi"];
+let r=arr.filter((v,i) => v.length>4)
+console.log(r.join("-").toUpperCase());
+
+
+
 new_arr=arr.filter(v => v.length>4).join("-").toUpperCase()
 console.log(new_arr)
