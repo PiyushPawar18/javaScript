@@ -61,3 +61,22 @@ console.log("5");
 //   .then(() => console.log("5"));
 // Promise.resolve().then(() => console.log("6"));
 // console.log("7");
+
+
+// console.log("a");
+
+// (function () {
+//    console.log("b");
+// })();
+
+// let promise = new Promise((resolve) => {
+//    resolve();
+// }).then(() => {
+//    console.log("c");
+// });
+
+// setTimeout(() => {
+//    console.log("e");
+// }, 0);
+
+// console.log("d");
